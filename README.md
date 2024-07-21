@@ -22,7 +22,7 @@ PAPI aspires to implement using the pareto principle.  We will not support all f
 
 ## Reminder me to discuss an issue tomorrow with my car dealer
 ```
-prompt: "Reminder me to talk to the car dealer about the sunroof tomorrow"
+prompt: "Remind me to talk to the car dealer about the sunroof tomorrow"
 PAPI: preprocess prompt and perform entity extraction
 agent: "Search for appointment <TOMORROW> related to <CAR>"
 PAPI: semantic search based on calendar embeddings for <CAR>
