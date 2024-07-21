@@ -6,6 +6,10 @@ PAPI aspires to implement using the pareto principle.  We will not support all f
 
 PAPI is like a prompt to SQL generator specifically for models defined in this schema.
 
+# Why
+
+* You can think of PAPI like an ORM that allows mapping between a set of well structured prompts and structured data sources.  This is like an ORM from the early 2000s.
+
 # Flow
 * log a <salesforce activity> (PAPI interface)
 * get schema from papi
