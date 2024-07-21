@@ -21,6 +21,7 @@ PAPI aspires to implement using the pareto principle.  We will not support all f
 # Example uses
 
 ## Reminder me to discuss an issue tomorrow with my car dealer
+```
 prompt: "Reminder me to talk to the car dealer about the sunroof tomorrow"
 PAPI: preprocess prompt and perform entity extraction
 agent: "Search for appointment <TOMORROW> related to <CAR>"
@@ -28,6 +29,7 @@ PAPI: semantic search based on calendar embeddings for <CAR>
 agent: "I'm planning to append this to the existing notes in your appointment tomorrow titled <TITLE>.  Confirm?"
 user: "yes"
 agent: "it's done"
+```
 
 ## What's on my calendar tomorrow?
 * fetch calendar
