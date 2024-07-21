@@ -1,6 +1,6 @@
 # papi
 
-Prompt API (PAPI) providers abstractions between LLMs and structure data sources.  Rather than using LangChain to integrate directly with Google Calendar, PAPI providers calendar interfaces that allow extensible code to be created that will integrate not only with Google Calendar, but any calendar.
+Prompt API (PAPI) provider abstractions between LLMs and structured data sources.  Rather than using LangChain to integrate directly with Google Calendar, PAPI providers calendar interfaces that allow extensible code to be created that will integrate not only with Google Calendar, but any calendar.
 
 PAPI aspires to implement using the pareto principle.  We will not support all features, but will support 80% of features.
 
@@ -17,6 +17,12 @@ PAPI aspires to implement using the pareto principle.  We will not support all f
 
 # Note
 * title, body
+
+# Web page
+* url, title, content, available_inputs :list, available_actions :list
+
+# Todo/Reminder
+* name, datetime
 
 # Example uses
 
