@@ -26,13 +26,28 @@ PAPI aspires to implement using the pareto principle.  We will not support all f
 
 # Example uses
 
+# Example arch
+
+* pg_vector
+
+
 ## Reminder me to discuss an issue tomorrow with my car dealer
 ```
 prompt: "Remind me to talk to the car dealer about the sunroof tomorrow"
 PAPI: preprocess prompt and perform entity extraction
 agent: "Search for appointment <TOMORROW> related to <CAR>"
+Planner:
+* Events => semantic search
+* Reminders => semantic search
+* Notes => semantic search
 PAPI: semantic search based on calendar embeddings for <CAR>
-agent: "I'm planning to append this to the existing notes in your appointment tomorrow titled <TITLE>.  Confirm?"
+agent: "I found an appointment, "Drop car At Ford".  I'm planning to append this to the existing notes in your appointment tomorrow titled <TITLE>.  Confirm or something else?"
+[branch 1]
+user: "something else"
+agent: "Create a reminder?"
+user: "yes"
+agent: "it's done"
+[branch 2]
 user: "yes"
 agent: "it's done"
 ```
