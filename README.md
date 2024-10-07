@@ -6,6 +6,14 @@ PAPI aspires to implement using the pareto principle.  We will not support all f
 
 PAPI is like a prompt to SQL generator specifically for models defined in this schema.
 
+# How
+
+papi can/fetch or write to a data store.  Think of it like GraphQL.  With resolvers for interacting with n-number of data stores.
+
+papi guarantees type safety.
+
+[Your business logic] <=> [PAPI] <=> [Merge] <=> [Google Calendar]
+
 # Why
 
 * You can think of PAPI like an ORM that allows mapping between a set of well structured prompts and structured data sources.  This is like an ORM from the early 2000s.
