@@ -51,6 +51,7 @@ type SFActivity = {
   activity_subject: Discuss RDS performance challenges
   activity_notes: Discussed RDS performance challenges.  Planning to shard data.
 }
+```
 * user: looks good
 * agent: it's logged
 
