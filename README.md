@@ -19,13 +19,40 @@ papi guarantees type safety.
 * You can think of PAPI like an ORM that allows mapping between a set of well structured prompts and structured data sources.  This is like an ORM from the early 2000s.
 
 # Flow
-* log a <salesforce activity> (PAPI interface)
-* get schema from papi
-* collect info
-* return proposed changeset (dryrun)
-* RHFL
-* modify/approve
-* execute
+* user: create a new salesforce activity
+* agent: fetch schema from papi
+* agent: collect info
+* agent: return proposed changeset (dryrun)
+* user: RHFL
+* user: modify/approve
+* agent: execute
+
+# Agent flow
+* agent: search for scheme matching "salesforce activity"
+* agent: return schema from PAPI schema registry
+* SFActivity
+```
+type SFActivity = {
+  account: SFAccount
+  activity_date: date
+  activity_type: enum
+  activity_subject: string
+  activity_notes: text
+}
+```
+agent: please tell me which customer you spoke with, when you spoke with them, and what you discussed?
+user: I met with Perplexity yesterday and discussed their RDS instance optimization.  They're planning to shard their data.
+agent: great, here's the proposed changeset, look ok?
+```
+type SFActivity = {
+  account: 'Perplexity'
+  activity_date: 2024-10-8
+  activity_type: Arch Review
+  activity_subject: Discuss RDS performance challenges
+  activity_notes: Discussed RDS performance challenges.  Planning to shard data.
+}
+* user: looks good
+* agent: it's logged
 
 # How it's built?
 * Uses https://github.com/vanna-ai/vanna
