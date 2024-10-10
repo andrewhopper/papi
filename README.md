@@ -33,7 +33,7 @@ papi guarantees type safety.
 * https://github.com/Sinaptik-AI/pandas-ai
 * https://www.e2enetworks.com/blog/how-to-use-llms-to-interact-with-your-sql-data
 
-# Initial object types
+# Initial standard schema object types
 
 # Email
 * from, to, cc, bcc, status [draft, sent], subject, body
@@ -45,7 +45,7 @@ papi guarantees type safety.
 * name
 
 # Note
-* title, body
+* title, created_at, updated_at, body, tags
 
 # Salesforce Activity
 
@@ -53,7 +53,7 @@ papi guarantees type safety.
 * url, title, content, available_inputs :list, available_actions :list
 
 # Todo/Reminder
-* name, datetime
+* name, status, state, due_at, created_at, updated_at
 
 # Example uses
 
@@ -66,25 +66,36 @@ papi guarantees type safety.
 ```
 prompt: "Remind me to talk to the car dealer about the sunroof tomorrow"
 PAPI: preprocess prompt and perform entity extraction
+
+**classify task**: "remind me" => intent detected (reminder, task)
+**action detection**: "talk to" => action
+**party**: "car dealer" => entity
+**subject**: "sunroof" => subject
+**timing**: "tomorrow" => today + 1.days
+
 agent: "Search for appointment <TOMORROW> related to <CAR>"
 Planner:
-* Events => semantic search
+* Classifier ==> Reminder
+* Calendar => semantic search
 * Reminders => semantic search
 * Notes => semantic search
 PAPI: semantic search based on calendar embeddings for <CAR>
 agent: "I found an appointment, "Drop car At Ford".  I'm planning to append this to the existing notes in your appointment tomorrow titled <TITLE>.  Confirm or something else?"
-[branch 1]
+[option path 1]
 user: "something else"
-agent: "Create a reminder?"
+agent: "Would you like to create a reminder?"
 user: "yes"
 agent: "it's done"
-[branch 2]
+[option path 2]
 user: "yes"
-agent: "it's done"
+agent: "it's done, I've added your note -'discuss sunroof' to your calendar appointment tomorrow"
 ```
 
 ## What's on my calendar tomorrow?
 * fetch calendar
+* classify: schedule question
+* time bounding: tomorrow
+* search: Calendar events
 * read back subjects
 
 # Email john about hanging out Friday
