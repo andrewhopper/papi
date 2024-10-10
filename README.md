@@ -53,7 +53,7 @@ type SFActivity = {
 }
 ```
 * user: looks good
-* agent: it's logged
+* agent: the record has been inserted
 
 # How it's built?
 * Uses https://github.com/vanna-ai/vanna
