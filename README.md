@@ -12,7 +12,7 @@ papi can/fetch or write to a data store.  Think of it like GraphQL.  With resolv
 
 papi guarantees type safety.
 
-[Your business logic] <=> [PAPI] <=> [Merge] <=> [Google Calendar]
+[Your business logic] <=> [PAPI] <=> [Calendar Interface] <=> [Google Calendar]
 
 # Why
 
